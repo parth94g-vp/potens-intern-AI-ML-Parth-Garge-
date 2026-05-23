@@ -48,6 +48,8 @@ All documents were merged into a consolidated PDF (~123 pages) and indexed into 
 
 ## System architecture 
 
+<img width="1024" height="1535" alt="Image" src="https://github.com/user-attachments/assets/eccd8b6f-47b5-4c9d-8651-e7d07d1b63ca" />
+
 ## Screenshots
 
 
