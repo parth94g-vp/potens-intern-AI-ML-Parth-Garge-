@@ -837,44 +837,90 @@ st.markdown("""
 # =====================================================
 # FEATURE CARDS
 # =====================================================
-col1, col2, col3 = st.columns(3)
 
-with col1:
+row1_col1, row1_col2, row1_col3 = st.columns(3)
+
+with row1_col1:
     st.markdown("""
     <div class="card">
         <div class="card-title">📘 DPDP Act</div>
         <div class="card-text">
-            Analyze consent requirements,
-            personal data processing,
-            compliance obligations,
-            and privacy laws.
+            Analyze Indian Digital Personal Data Protection
+            Act compliance, consent management,
+            lawful processing, and privacy obligations.
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-with col2:
+with row1_col2:
+    st.markdown("""
+    <div class="card">
+        <div class="card-title">🇪🇺 GDPR</div>
+        <div class="card-text">
+            Understand GDPR principles,
+            lawful basis of processing,
+            user rights, compliance,
+            and international privacy regulations.
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with row1_col3:
+    st.markdown("""
+    <div class="card">
+        <div class="card-title">🔐 Privacy Policies</div>
+        <div class="card-text">
+            Analyze organizational privacy policies,
+            third-party data sharing,
+            retention policies,
+            and compliance obligations.
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+# =====================================================
+# SECOND ROW
+# =====================================================
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+row2_col1, row2_col2, row2_col3 = st.columns(3)
+
+with row2_col1:
+    st.markdown("""
+    <div class="card">
+        <div class="card-title">👨‍💼 Employee Policies</div>
+        <div class="card-text">
+            Review employee privacy policies,
+            workplace monitoring,
+            HR data handling,
+            and employment-related compliance.
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with row2_col2:
     st.markdown("""
     <div class="card">
         <div class="card-title">🚗 Motor Vehicle Rules</div>
         <div class="card-text">
             Get legal insights regarding
-            traffic violations,
+            transport regulations,
             accident liability,
-            insurance,
-            and transport laws.
+            insurance compliance,
+            and traffic violations.
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-with col3:
+with row2_col3:
     st.markdown("""
     <div class="card">
-        <div class="card-title">⚖️ IPC & Legal Analysis</div>
+        <div class="card-title">⚖️ Legal Analysis</div>
         <div class="card-text">
-            Understand IPC sections,
-            legal reasoning,
-            and AI-assisted
-            case law analysis.
+            AI-powered legal reasoning
+            using citation-based Retrieval-Augmented Generation (RAG)
+            for structured legal assistance.
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -899,33 +945,66 @@ db = FAISS.load_local(
 
 retriever = db.as_retriever(
     search_type="similarity",
-    search_kwargs={"k": 5}
+    search_kwargs={"k": 8}
 )
 
 # =====================================================
 # PROMPT TEMPLATE
 # =====================================================
 prompt_template = """
-You are an advanced Indian Legal AI Assistant.
+You are an advanced Indian Legal AI Assistant specializing in:
 
-STRICT RULES:
-- Answer ONLY using provided legal context.
-- Do NOT hallucinate.
-- If answer is not available in context,
-  clearly say:
-  "The uploaded legal documents do not contain sufficient information."
+- DPDP Act
+- Motor Vehicle Rules
+- Indian Penal Code (IPC)
+- Indian legal compliance
+- Legal case analysis
 
-Provide:
-1. Case Summary
-2. Legal Provisions
-3. Legal Analysis
-4. Final Conclusion
+Your responsibilities:
 
-CONTEXT:
+1. Understand the user query or case study carefully.
+2. Determine whether the matter falls under:
+   - DPDP Act
+   - Motor Vehicle Rules
+   - IPC
+   - Other Indian legal provisions
+
+3. Prioritize retrieving and using the provided legal context.
+4. Use legal reasoning and explain conclusions clearly.
+5. Provide structured, detailed, and professional responses.
+6. Avoid hallucinations or unsupported legal claims.
+7. If information is insufficient, clearly mention limitations.
+8. Maintain a neutral and legally sound tone.
+9. Do NOT provide personal opinions.
+10. If necessary, recommend consulting a qualified legal expert.
+
+------------------------------
+RETRIEVED LEGAL CONTEXT:
 {context}
+------------------------------
 
-QUESTION:
+USER QUESTION:
 {question}
+
+------------------------------
+RESPONSE FORMAT:
+
+ 1. Case Summary
+Briefly summarize the legal issue.
+
+ 2. Relevant Legal Provisions
+Mention applicable sections, acts, or rules.
+
+ 3. Legal Analysis and Opinion
+Provide detailed legal reasoning using the retrieved context.
+
+ 4. Supporting References
+Mention relevant legal concepts, provisions, or precedents if available.
+
+ 5. Limitations
+Mention if the available context is insufficient or uncertain.
+
+------------------------------
 
 ANSWER:
 """
