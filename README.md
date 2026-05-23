@@ -214,7 +214,7 @@ This prevents silent hallucinations.
 
 The system supports multilingual legal queries.
 
-
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/8cf5df34-84d5-4865-9438-0abb0363ea37" />
 
 ### Confidence Score
 
