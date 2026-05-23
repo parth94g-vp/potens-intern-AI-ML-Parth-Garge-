@@ -52,6 +52,11 @@ All documents were merged into a consolidated PDF (~123 pages) and indexed into 
 
 ## Screenshots
 
+<img width="1277" height="621" alt="Image" src="https://github.com/user-attachments/assets/f60badc4-f38c-48b1-bb1b-3cb7a00821e7" />
+<img width="1244" height="636" alt="Image" src="https://github.com/user-attachments/assets/7974cdc1-3987-476f-afdd-cb97747e832e" />
+<img width="1310" height="637" alt="Image" src="https://github.com/user-attachments/assets/5da0cde7-f161-41a1-8e4e-0daed0b10925" />
+<img width="1327" height="649" alt="Image" src="https://github.com/user-attachments/assets/81096e62-dc39-4c60-814f-887e0dc36ece" />
+<img width="1301" height="640" alt="Image" src="https://github.com/user-attachments/assets/52062ac8-f90b-4d13-b874-f9d5a6bf807c" />
 
 ## Tech Stack
 
