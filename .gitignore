@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+myenv/
+venv/
+
+# Environment variables
+.env
+
+# Vector DB
+ipc_vector_db/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large files
+*.zip
