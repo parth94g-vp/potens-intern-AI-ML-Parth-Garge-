@@ -48,6 +48,8 @@ All documents were merged into a consolidated PDF (~123 pages) and indexed into 
 
 ## System architecture 
 
+<img width="1024" height="1535" alt="Image" src="https://github.com/user-attachments/assets/eccd8b6f-47b5-4c9d-8651-e7d07d1b63ca" />
+
 ## Screenshots
 
 
@@ -212,7 +214,7 @@ This prevents silent hallucinations.
 
 The system supports multilingual legal queries.
 
-
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/8cf5df34-84d5-4865-9438-0abb0363ea37" />
 
 ### Confidence Score
 
